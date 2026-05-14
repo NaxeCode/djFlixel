@@ -812,7 +812,7 @@ class VList<T:IListItem<K> & FlxSprite, K> extends FlxSpriteGroup
 		// DEV: Just checking X is enough to know that this menu is locked
 		var mCoords:FlxPoint;
 		if (this.scrollFactor.x == 0) {
-			mCoords = FlxG.mouse.getPositionInCameraView(this.camera);
+			mCoords = FlxG.mouse.getViewPosition(this.camera);
 		}else{
 			mCoords = FlxG.mouse.getWorldPosition(this.camera);
 		}

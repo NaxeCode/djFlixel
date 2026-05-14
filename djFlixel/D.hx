@@ -78,9 +78,11 @@ class D
 		if (dest != null) return; // Check if is already inited
 			
 		DataT.copyFields(O, IP);
+		#if djflixel_verbose
 		trace('\n:: DjFlixel v$DJFLX_VER\n:: ${IP.name}, ${IP.version}\n:: ----------------------------');
 			var c = Lib.current.stage.window.context;
 			trace(':: Renderer :', c.type, c.attributes);
+		#end
 		
 		dest = new Ddest();
 		snd = new Dsound();
@@ -109,7 +111,9 @@ class D
 			if (IP.init != null) IP.init();
 
 			#if (debug)
+				#if djflixel_verbose
 				trace('Debug : Enabling Debug keys');
+				#end
 				D.ctrl.hotkey_add( #if (html5) DELETE #else F12 #end , _hotkey_reset );
 			#end
 		});

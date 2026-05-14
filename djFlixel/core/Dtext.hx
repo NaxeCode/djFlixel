@@ -189,7 +189,7 @@ class Dtext
 		if (s.bs != null) T.borderSize = s.bs;
 		
 		if (s.so != null){
-			T.shadowOffset.set(s.so[0], s.so[1]);
+			T.setBorderStyle(FlxTextBorderStyle.SHADOW_XY(s.so[0], s.so[1]), T.borderColor, T.borderSize);
 		}
 		
 		#if html5

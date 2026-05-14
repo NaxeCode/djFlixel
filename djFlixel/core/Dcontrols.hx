@@ -263,14 +263,16 @@ class Dcontrols
 	{
 		if (gamepad == null) 
 		{
+			#if djflixel_verbose
 			trace("Info: Controller not found");
+			#end
 			pressed = _keyPressed;
 			justPressed = _keyJustPressed;
 			justReleased = _keyJustReleased;
 		}
 		else 
 		{
-			#if FLX_GAMEINPUT_API
+			#if (FLX_GAMEINPUT_API && djflixel_verbose)
 			trace('Info: Controller found, MODEL=${gamepad.model}, NAME=${gamepad.name}');
 			#end
 			
@@ -451,7 +453,9 @@ class Dcontrols
 		if (hotkeys == null) {
 			hotkeys = new Map();
 			FlxG.signals.postUpdate.add(hotkey_onupdate);
+			#if djflixel_verbose
 			trace("Hotkey: hotkey_onupdate added +");
+			#end
 		}
 
 		hotkeys.set(key, cb);

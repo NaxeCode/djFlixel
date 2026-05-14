@@ -89,7 +89,9 @@ class Atlas
 		// DEV: Do not cache the bitmap on OPENFL assets, because it is going to be stored here.
 		pixels = Assets.getBitmapData(assetName, false);
 		
+		#if djflixel_verbose
 		trace('Loading Atlas ($assetName) with id ($id)');
+		#end
 	}//---------------------------------------------------;
 	
 	
